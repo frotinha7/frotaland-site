@@ -1,126 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Frotaland SMP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FrotaLand SMP</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: url('https://images.unsplash.com/photo-1606112219348-204d7d8b94ee') no-repeat center center/cover;
-    color: white;
-    text-align: center;
+  margin: 0;
+  background: #050805;
+  font-family: Arial, sans-serif;
+  color: white;
 }
 
-/* overlay escuro */
-.overlay {
-    background: rgba(0, 0, 0, 0.75);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.9)), url("banner.png");
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
 }
 
-.container {
-    background: rgba(0, 255, 255, 0.05);
-    border: 1px solid #00eaff;
-    border-radius: 20px;
-    padding: 50px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+.box {
+  background: rgba(0,0,0,.72);
+  border: 2px solid #39ff14;
+  border-radius: 18px;
+  padding: 35px;
+  max-width: 850px;
+  text-align: center;
+  box-shadow: 0 0 35px #39ff14;
 }
 
 h1 {
-    font-size: 60px;
-    color: #00eaff;
-    text-shadow: 0 0 20px #00eaff;
+  font-size: 64px;
+  margin: 0;
+  color: #39ff14;
+  text-shadow: 0 0 20px #39ff14;
 }
 
 p {
-    font-size: 20px;
-    margin-bottom: 20px;
+  font-size: 22px;
 }
 
-/* info boxes */
-.info {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px 20px;
-    border: 1px solid #00eaff;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
-/* botões */
 .btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 35px;
-    background: #00eaff;
-    color: black;
-    border-radius: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
+  display: inline-block;
+  margin: 10px;
+  padding: 16px 32px;
+  background: #39ff14;
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #00eaff;
+  box-shadow: 0 0 20px #39ff14;
+  transform: scale(1.05);
 }
 
-/* botão secundário */
-.btn-outline {
-    background: transparent;
-    border: 1px solid #00eaff;
-    color: #00eaff;
-}
-
-.features {
-    margin-top: 30px;
-}
-
-.feature {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 25px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 10px;
+.info {
+  margin-top: 20px;
+  font-size: 20px;
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="overlay">
-<div class="container">
+<section class="hero">
+  <div class="box">
+    <h1>FROTA LAND SMP</h1>
+    <p>Sua aventura, suas regras, seu mundo!</p>
 
-<h1>FROTALAND SMP</h1>
+    <div class="info">
+      <strong>IP:</strong> jogar.frotaland.com.br<br>
+      <strong>Versão:</strong> 1.21.1 | <strong>Modpack:</strong> ATM10
+    </div>
 
-<p>Servidor Minecraft ATM10 com aventura, economia, TRADE, RP e comunidade ativa.</p>
+    <br>
 
-<div>
-    <span class="info">IP: jogar.frotaland.com.br</span>
-    <span class="info">Versão: 1.21.1</span>
-    <span class="info">Modpack: ATM10</span>
-</div>
-
-<br>
-
-<a class="btn" href="minecraft://jogar.frotaland.com.br">JOGAR AGORA</a>
-<a class="btn btn-outline" href="https://discord.gg/prvDEs4hkT" target="_blank">DISCORD</a>
-
-<div class="features">
-    <div class="feature">⚔️ Survival RPG & RP</div>
-    <div class="feature">💰 Economia balanceada</div>
-    <div class="feature">🛡️ TRADE E SHOP</div>
-    <div class="feature">🎁 Eventos & VIPs</div>
-</div>
-
-</div>
-</div>
+    <a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">JOGAR AGORA</a>
+    <a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">DISCORD</a>
+  </div>
+</section>
 
 </body>
 </html>
