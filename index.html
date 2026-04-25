@@ -1,46 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Frotaland</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrotaLand SMP</title>
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial;
-      background: linear-gradient(#0f2027, #203a43, #2c5364);
+      font-family: Arial, sans-serif;
+      background: #07151a;
       color: white;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(3, 12, 16, .75), rgba(3, 12, 16, .9)),
+        url("https://images.unsplash.com/photo-1607513746994-51f730a44832?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 40px 20px;
     }
+
+    .card {
+      max-width: 950px;
+      width: 100%;
+      background: rgba(7, 21, 26, .86);
+      border: 1px solid #00d9ff;
+      border-radius: 24px;
+      padding: 50px 30px;
+      box-shadow: 0 0 40px rgba(0, 217, 255, .25);
+    }
+
     h1 {
-      font-size: 60px;
-      margin-top: 100px;
+      font-size: 72px;
+      margin: 0;
+      color: #00d9ff;
+      text-shadow: 0 0 25px rgba(0, 217, 255, .8);
     }
-    p {
-      font-size: 20px;
+
+    .subtitle {
+      font-size: 24px;
+      margin: 20px 0 30px;
     }
+
+    .info {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .tag {
+      background: rgba(0, 217, 255, .12);
+      border: 1px solid #00d9ff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
     .btn {
       display: inline-block;
       margin: 10px;
-      padding: 15px 30px;
-      background: #00c3ff;
-      color: black;
+      padding: 16px 32px;
+      border-radius: 12px;
+      background: #00d9ff;
+      color: #001014;
       text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
+      font-weight: 900;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 217, 255, .8);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: #00d9ff;
+      border: 1px solid #00d9ff;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 35px;
+    }
+
+    .feature {
+      background: rgba(255,255,255,.06);
+      padding: 18px;
+      border-radius: 14px;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      color: #8fb7c0;
+      background: #050d10;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 44px; }
+      .subtitle { font-size: 18px; }
     }
   </style>
 </head>
-
 <body>
 
-<h1>FROTALAND</h1>
+<section class="hero">
+  <div class="card">
+    <h1>FROTALAND SMP</h1>
+    <p class="subtitle">Servidor Minecraft ATM10 com aventura, economia, claims e comunidade ativa.</p>
 
-<p>Servidor Minecraft Survival RPG</p>
+    <div class="info">
+      <div class="tag">IP: jogar.frotaland.com.br</div>
+      <div class="tag">Versão: 1.21.1</div>
+      <div class="tag">Modpack: ATM10</div>
+    </div>
 
-<button class="btn" onclick="navigator.clipboard.writeText('jogar.frotaland.com.br'); alert('IP copiado: jogar.frotaland.com.br')">
-  JOGAR AGORA
-</button>
-<a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">DISCORD</a>
-<p>IP: jogar.frotaland.com.br</p>
-<p>Versão: 1.21.1 | Modpack: ATM10</p>
+    <div class="buttons">
+      <a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">JOGAR AGORA</a>
+      <a class="btn secondary" href="https://discord.gg/prvDEs4hkT" target="_blank">DISCORD</a>
+    </div>
+
+    <div class="features">
+      <div class="feature">⚔️ Survival RPG</div>
+      <div class="feature">💰 Economia</div>
+      <div class="feature">🛡️ Sistema de Claims</div>
+      <div class="feature">🎁 Eventos e VIPs</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 FrotaLand SMP — Todos os direitos reservados.
+</footer>
+
 </body>
 </html>
