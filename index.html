@@ -37,6 +37,11 @@ a { text-decoration: none; color: inherit; }
   background: linear-gradient(90deg,#0ea5e9,#38bdf8);
   padding: 12px 25px;
   border-radius: 30px;
+  min-width: 120px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero {
@@ -44,20 +49,29 @@ a { text-decoration: none; color: inherit; }
     linear-gradient(rgba(11,18,32,.15), rgba(11,18,32,.45)),
     url("banner-frotaland.png");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   min-height: 340px;
   padding: 235px 20px 35px;
+  text-align: center;
   position: relative;
 }
+
+.logo { display: none; }
 
 .hero-info {
   position: absolute;
   top: 50%;
+  left: 0;
   width: 100%;
   transform: translateY(-50%);
+
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 80px;
   padding: 0 80px;
+  flex-wrap: nowrap;
 }
 
 .hero-btn {
@@ -66,12 +80,19 @@ a { text-decoration: none; color: inherit; }
   border-radius: 10px;
   padding: 12px 22px;
   font-weight: 900;
+  transition: .3s;
 }
 
 .hero-btn span {
   display: block;
-  font-size: 14px;
   color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(56,189,248,.65);
 }
 
 .layout {
@@ -88,6 +109,18 @@ a { text-decoration: none; color: inherit; }
   border-radius: 12px;
   padding: 22px;
   margin-bottom: 22px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.4);
+}
+
+.menu-item {
+  padding: 18px;
+  border-bottom: 1px solid #1f2937;
+  font-weight: 900;
+}
+
+.menu-item:hover {
+  background: #1e293b;
+  color: #38bdf8;
 }
 
 .play-btn {
@@ -103,20 +136,50 @@ a { text-decoration: none; color: inherit; }
 .main-title {
   font-size: 22px;
   margin-bottom: 15px;
+  font-weight: 900;
 }
 
 .banner-img {
   width: 100%;
+  max-height: 320px;
+  object-fit: contain;
   border-radius: 10px;
   margin-bottom: 18px;
 }
 
-.blue { color: #38bdf8; }
+.blue {
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+.loja-destaque {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.loja-destaque img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  margin: auto;
+  display: block;
+}
 
 .loja-info {
-  margin-top: 20px;
+  margin-top: 22px;
   line-height: 1.6;
   color: #cbd5e1;
+}
+
+.loja-info ul { padding-left: 20px; }
+
+.donator {
+  display: flex;
+  justify-content: space-between;
+  background: #0b1220;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
 footer {
@@ -124,6 +187,37 @@ footer {
   padding: 30px;
   color: #94a3b8;
   background: #020617;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+
+  .navbar {
+    gap: 14px;
+    font-size: 13px;
+    overflow-x: auto;
+  }
+
+  .hero {
+    min-height: 260px;
+    padding: 165px 15px 28px;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .hero-info {
+    position: static;
+    transform: none;
+    justify-content: center;
+    padding: 0;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 </style>
 </head>
@@ -135,6 +229,7 @@ footer {
   <a href="#tutorial">🧭 TUTORIAL</a>
   <a href="#jogar">🎮 JOGAR</a>
   <a href="#regras">📖 REGRAS</a>
+  <a href="#doadores">⭐ DOADORES</a>
   <a class="btn-loja" href="loja-coins.html">💰 COINS</a>
   <a class="btn-loja" href="https://frotaland.centralcart.ai" target="_blank">LOJA</a>
 </nav>
@@ -143,67 +238,175 @@ footer {
   <div class="hero-info">
     <a class="hero-btn" href="minecraft://?addExternalServer=FrotaLand|jogar.frotaland.com.br">
       🔥 CONECTE-SE JÁ!
-      <span>jogar.frotaland.com.br</span>
+      <span>IP: jogar.frotaland.com.br</span>
     </a>
 
     <a class="hero-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">
-      💬 DISCORD
-      <span>Entre na comunidade</span>
+                                 💬 DISCORD
+                             <span>Entre na comunidade</span>
     </a>
   </div>
 </section>
 
 <div class="layout">
 
-<main>
+  <aside>
 
-<div class="card">
-  <div class="main-title">Bem-vindo ao FrotaLand SMP</div>
-  <img class="banner-img" src="banner2.png">
+    <div class="card" id="vip">
+      <div class="main-title">💎 Torne-se VIP</div>
+      <img class="banner-img" src="vip.png">
 
-  <p>Servidor com o melhor modpack <span class="blue">ATM10</span>.</p>
-</div>
+      <p>Destaque-se dentro do <span class="blue">FrotaLand SMP</span> e tenha acesso a vantagens exclusivas!</p>
 
-<!-- TUTORIAL -->
-<div class="card" id="tutorial">
-  <div class="main-title">🧭 Como jogar</div>
+      <p class="blue">🔥 Benefícios VIP:</p>
+      <ul style="line-height:1.8;">
+        <li>✨ Nick RGB</li>
+        <li>🐾 Pets exclusivos</li>
+        <li>🐎 Montarias</li>
+        <li>⚡ Perks únicos</li>
+        <li>💰 Bônus economia</li>
+        <li>🎁 Kits VIP</li>
+        <li>🚀 Prioridade</li>
+      </ul>
 
-  <div class="loja-info">
+      <a class="play-btn" href="https://frotaland.centralcart.ai" target="_blank">COMPRAR VIP</a>
+    </div>
 
-    <h3>1️⃣ Instalar modpack</h3>
-    <p><b>Original:</b> Use o CurseForge e procure <span class="blue">ATM10</span>.</p>
-    <p><b>TLauncher:</b> Vá em TLMODS e instale ATM10.</p>
+    <div class="card" id="doadores">
+      <div class="main-title">🏆 TOP DOADORES</div>
+      <img class="banner-img" src="doadores2.png">
 
-    <hr>
+      <div class="donator"><span>🥇 Em breve</span><span class="blue">R$ 0,00</span></div>
+      <div class="donator"><span>🥈 Em breve</span><span class="blue">R$ 0,00</span></div>
+      <div class="donator"><span>🥉 Em breve</span><span class="blue">R$ 0,00</span></div>
+    </div>
 
-    <h3>2️⃣ Mods de áudio</h3>
-    <p>Baixe no Discord.</p>
+    <div class="card" id="jogar">
+      <h2>JOGAR AGORA</h2>
+      <a class="play-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">ENTRAR</a>
+    </div>
 
-    <a class="play-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">
-      BAIXAR MODS
-    </a>
+  </aside>
 
-    <hr>
+  <main>
 
-    <h3>3️⃣ Entrar no servidor</h3>
+    <div class="card">
+      <div class="main-title">Bem-vindo ao FrotaLand SMP!</div>
 
-    <p style="text-align:center; font-size:20px;">
-      <span class="blue">jogar.frotaland.com.br</span>
-    </p>
+      <img class="banner-img" src="banner2.png">
 
-    <a class="play-btn" href="minecraft://?addExternalServer=FrotaLand|jogar.frotaland.com.br">
-      CONECTAR
-    </a>
+      <p><span class="blue">Sobre o servidor:</span></p>
+      <p>Servidor de MINECRAFT com o MELHOR MODPACK. O servidor usa o ATM10 para uma experiência de RPG e ROLEPLAY (RP).</p>
 
-  </div>
-</div>
+      <p><span class="blue">Como entrar:</span></p>
+      <p>IP: <span class="blue">jogar.frotaland.com.br</span></p>
+      <p>Versão: 1.21.1 | ATM10</p>
 
-<div class="card" id="regras">
-  <div class="main-title">Regras</div>
-  <img class="banner-img" src="regras2.png">
-</div>
+      <div class="loja-destaque">
+        <a href="https://frotaland.centralcart.ai" target="_blank">
+          <img src="loja2.png" alt="Loja Oficial">
+        </a>
 
-</main>
+        <a class="play-btn" href="https://frotaland.centralcart.ai" target="_blank">ACESSAR LOJA</a>
+      </div>
+
+      <div class="loja-info">
+        <p>
+          💎 <b class="blue">Apoie o FrotaLand SMP</b> adquirindo itens e benefícios exclusivos!
+          Cada compra ajuda a manter o servidor online, com melhorias constantes, eventos e novidades.
+        </p>
+
+        <p>🛒 <b class="blue">O que você encontra na loja:</b></p>
+
+        <ul>
+          <li>👑 VIPs com vantagens exclusivas</li>
+          <li>🎁 Kits especiais para evolução rápida</li>
+          <li>🐾 Pets e cosméticos únicos</li>
+          <li>⚡ Boosts e benefícios dentro do servidor</li>
+          <li>🎮 Itens para melhorar sua experiência</li>
+        </ul>
+
+        <p>
+          🔒 <b class="blue">Pagamento seguro:</b><br>
+          Aceitamos Pix, Mercado Pago e Cartão de Crédito com total segurança.
+        </p>
+
+        <p>🚀 Garanta seus itens agora e se destaque no servidor!</p>
+
+        <p>
+          <b class="blue">Posso pedir reembolso?</b><br>
+          Você está realizando uma doação, logo você não pode pedir reembolso independente do motivo.
+          A doação é arrecadada para uso na manutenção do servidor. Caso não funcione bem, você pode
+          solicitar a troca por outro funcional ou trocar por outro superior caso não tenha um item igual.
+          O item dado como benefício é um item virtual. O item é dado como item temporário em troca da sua doação.
+        </p>
+
+        <hr style="border:1px solid #1e293b; margin:20px 0;">
+
+        <p style="text-align:center;">
+          💬 <b>Dúvidas ou suporte?</b><br>
+          Entre no nosso Discord:<br>
+          <a href="https://discord.gg/prvDEs4hkT" target="_blank" style="color:#38bdf8; font-weight:bold;">
+            discord.gg/prvDEs4hkT
+          </a>
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="card" id="tutorial">
+      <div class="main-title">🧭 Como jogar no FrotaLand SMP</div>
+
+      <img class="banner-img" src="discord2.png" alt="Tutorial FrotaLand">
+
+      <p><span class="blue">Siga esse passo a passo para entrar no servidor sem erro:</span></p>
+
+      <div class="loja-info">
+        <h3>✅ 1. Minecraft original</h3>
+        <p>Abra o <b>CurseForge</b>, vá na busca de <b>Modpacks</b> e procure por <span class="blue">ATM10</span>.</p>
+        <p>Baixe e instale a versão mais recente do modpack.</p>
+
+        <hr style="border:1px solid #1e293b; margin:20px 0;">
+
+        <h3>✅ 2. TLauncher / TL</h3>
+        <p>Abra o TL, vá em <b>TLMODS</b>, procure por <span class="blue">ATM10</span> e baixe a última versão disponível.</p>
+
+        <hr style="border:1px solid #1e293b; margin:20px 0;">
+
+        <h3>✅ 3. Mods de áudio</h3>
+        <p>Entre no nosso Discord e baixe os mods referentes ao áudio. Eles são importantes para a experiência completa do servidor.</p>
+
+        <a class="play-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">💬 BAIXAR MODS NO DISCORD</a>
+
+        <hr style="border:1px solid #1e293b; margin:20px 0;">
+
+        <h3>✅ 4. Entrar no servidor</h3>
+        <p>Depois de instalar tudo, abra o Minecraft com o modpack ATM10 e entre usando o IP:</p>
+
+        <p style="font-size:20px; text-align:center;">
+          <span class="blue">jogar.frotaland.com.br</span>
+        </p>
+
+        <a class="play-btn" href="minecraft://?addExternalServer=FrotaLand|jogar.frotaland.com.br">🔥 CONECTAR NO SERVIDOR</a>
+
+        <p style="margin-top:20px; color:#94a3b8;">
+          ⚠ Caso dê erro ao entrar, confira se o ATM10 está atualizado e se os mods de áudio foram colocados corretamente.
+        </p>
+      </div>
+    </div>
+
+    <div class="card" id="regras">
+      <div class="main-title">Regras</div>
+      <img class="banner-img" src="regras2.png">
+    </div>
+
+    <div class="card">
+      <div class="main-title">Discord</div>
+      <img class="banner-img" src="discord2.png">
+    </div>
+
+  </main>
 
 </div>
 
