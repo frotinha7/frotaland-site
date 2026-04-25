@@ -41,20 +41,18 @@ a { text-decoration: none; color: inherit; }
 
 .hero {
   background:
-    linear-gradient(rgba(11,18,32,.15), rgba(11,18,32,.35)),
+    linear-gradient(rgba(11,18,32,.15), rgba(11,18,32,.45)),
     url("banner-frotaland.png");
-  background-size: contain;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-position: center top;
-  min-height: 260px;
-  padding: 145px 20px 35px;
+  min-height: 340px;
+  padding: 235px 20px 35px;
   text-align: center;
   position: relative;
 }
 
-.logo {
-  display: none;
-}
+.logo { display: none; }
 
 .hero-info {
   display: flex;
@@ -62,13 +60,14 @@ a { text-decoration: none; color: inherit; }
   gap: 80px;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 0;
 }
 
 .hero-btn {
-  background: rgba(15, 23, 42, 0.72);
-  border: 1px solid rgba(56,189,248,.25);
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(56,189,248,.35);
   border-radius: 10px;
-  padding: 12px 18px;
+  padding: 12px 22px;
   font-weight: 900;
   transition: .3s;
 }
@@ -142,11 +141,6 @@ a { text-decoration: none; color: inherit; }
   font-weight: bold;
 }
 
-.green {
-  color: #39ff14;
-  font-weight: bold;
-}
-
 .loja-destaque {
   text-align: center;
   margin-top: 25px;
@@ -166,9 +160,7 @@ a { text-decoration: none; color: inherit; }
   color: #cbd5e1;
 }
 
-.loja-info ul {
-  padding-left: 20px;
-}
+.loja-info ul { padding-left: 20px; }
 
 .donator {
   display: flex;
@@ -189,14 +181,21 @@ footer {
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
 
+  .navbar {
+    gap: 14px;
+    font-size: 13px;
+    overflow-x: auto;
+  }
+
   .hero {
-    min-height: 220px;
-    padding: 120px 15px 30px;
+    min-height: 260px;
+    padding: 165px 15px 28px;
     background-size: cover;
+    background-position: center center;
   }
 
   .hero-info {
-    gap: 12px;
+    gap: 10px;
   }
 
   .hero-btn {
@@ -218,8 +217,6 @@ footer {
 </nav>
 
 <section class="hero">
-  <div class="logo">FROTALAND SMP</div>
-
   <div class="hero-info">
     <a class="hero-btn" href="minecraft://?addExternalServer=FrotaLand|jogar.frotaland.com.br">
       🔥 CONECTE-SE JÁ!
@@ -239,13 +236,11 @@ footer {
 
     <div class="card" id="vip">
       <div class="main-title">💎 Torne-se VIP</div>
-
       <img class="banner-img" src="vip.png">
 
       <p>Destaque-se dentro do <span class="blue">FrotaLand SMP</span> e tenha acesso a vantagens exclusivas!</p>
 
       <p class="blue">🔥 Benefícios VIP:</p>
-
       <ul style="line-height:1.8;">
         <li>✨ Nick RGB</li>
         <li>🐾 Pets exclusivos</li>
@@ -256,14 +251,11 @@ footer {
         <li>🚀 Prioridade</li>
       </ul>
 
-      <a class="play-btn" href="https://frotaland.centralcart.ai" target="_blank">
-        COMPRAR VIP
-      </a>
+      <a class="play-btn" href="https://frotaland.centralcart.ai" target="_blank">COMPRAR VIP</a>
     </div>
 
     <div class="card" id="doadores">
       <div class="main-title">🏆 TOP DOADORES</div>
-
       <img class="banner-img" src="doadores2.png">
 
       <div class="donator"><span>🥇 Em breve</span><span class="blue">R$ 0,00</span></div>
@@ -297,9 +289,7 @@ footer {
           <img src="loja2.png" alt="Loja Oficial">
         </a>
 
-        <a class="play-btn" href="https://frotaland.centralcart.ai" target="_blank">
-          ACESSAR LOJA
-        </a>
+        <a class="play-btn" href="https://frotaland.centralcart.ai" target="_blank">ACESSAR LOJA</a>
       </div>
 
       <div class="loja-info">
