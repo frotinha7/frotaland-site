@@ -41,33 +41,48 @@ a { text-decoration: none; color: inherit; }
 
 .hero {
   background:
-    linear-gradient(rgba(11,18,32,.6), rgba(11,18,32,.85)),
-    url("banner-frotaland.png"); /* SEU NOVO BANNER */
-  background-size: cover;
-  background-position: center;
-  padding: 90px 20px;
+    linear-gradient(rgba(11,18,32,.15), rgba(11,18,32,.35)),
+    url("banner-frotaland.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  min-height: 260px;
+  padding: 145px 20px 35px;
   text-align: center;
+  position: relative;
 }
 
 .logo {
-  font-size: 45px;
-  font-weight: 900;
-  color: #38bdf8;
-  text-shadow: 0 0 25px #0ea5e9;
+  display: none;
 }
 
 .hero-info {
   display: flex;
   justify-content: center;
-  gap: 60px;
-  margin-top: 20px;
+  gap: 80px;
+  align-items: center;
   flex-wrap: wrap;
 }
 
-.hero-info span {
+.hero-btn {
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(56,189,248,.25);
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 900;
+  transition: .3s;
+}
+
+.hero-btn span {
   display: block;
-  color: #94a3b8;
+  color: #cbd5e1;
   font-size: 14px;
+  font-weight: 500;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(56,189,248,.65);
 }
 
 .layout {
@@ -173,6 +188,21 @@ footer {
 
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
+
+  .hero {
+    min-height: 220px;
+    padding: 120px 15px 30px;
+    background-size: cover;
+  }
+
+  .hero-info {
+    gap: 12px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 </style>
 </head>
@@ -191,8 +221,15 @@ footer {
   <div class="logo">FROTALAND SMP</div>
 
   <div class="hero-info">
-    <div>🔥 CONECTE-SE JÁ!<span>IP: jogar.frotaland.com.br</span></div>
-    <div>💬 DISCORD<span>Entre na comunidade</span></div>
+    <a class="hero-btn" href="minecraft://?addExternalServer=FrotaLand|jogar.frotaland.com.br">
+      🔥 CONECTE-SE JÁ!
+      <span>IP: jogar.frotaland.com.br</span>
+    </a>
+
+    <a class="hero-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">
+      💬 DISCORD
+      <span>Entre na comunidade</span>
+    </a>
   </div>
 </section>
 
