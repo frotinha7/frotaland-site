@@ -6,94 +6,176 @@
 <title>FrotaLand SMP</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  background: #020502;
-  font-family: Arial, sans-serif;
+  background: #10151f;
   color: white;
+  font-family: Arial, sans-serif;
 }
 
-.container {
-  max-width: 1450px;
-  margin: auto;
-  padding: 18px;
+a { text-decoration: none; color: inherit; }
+
+.navbar {
+  height: 75px;
+  background: #111722;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  font-weight: 900;
+  border-bottom: 1px solid #222b38;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-img {
-  width: 100%;
+.navbar a:hover { color: #4fd35a; }
+
+.btn-loja {
+  background: #4fd35a;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+}
+
+.hero {
+  background:
+    linear-gradient(rgba(16,21,31,.75), rgba(16,21,31,.95)),
+    url("banner.png");
+  background-size: cover;
+  background-position: center;
+  padding: 70px 20px 40px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 58px;
+  font-weight: 900;
+  color: #54ff4f;
+  text-shadow: 0 0 20px #2bff00;
+}
+
+.hero-info {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.hero-card {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hero-card span {
   display: block;
+  color: #9ca8b8;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.layout {
+  max-width: 1200px;
+  margin: -25px auto 40px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.card {
+  background: #1a202c;
+  border-radius: 10px;
+  padding: 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.menu-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.menu-item {
+  padding: 22px;
+  border-bottom: 1px solid #2a3240;
+  font-weight: 900;
+}
+
+.menu-item:hover {
+  background: #232b38;
+  color: #4fd35a;
+}
+
+.play-btn {
+  display: block;
+  background: #4fd35a;
+  padding: 17px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 900;
+  margin-top: 20px;
+}
+
+.main-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 900;
+}
+
+.banner-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.green {
+  color: #39ff14;
+  font-weight: 900;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.section-grid img {
+  width: 100%;
   border-radius: 8px;
 }
 
-.top {
-  display: grid;
-  grid-template-columns: 2.2fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
+.donator {
+  display: flex;
+  justify-content: space-between;
+  background: #111722;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
 }
 
-.buttons {
+footer {
   text-align: center;
-  margin: 22px 0;
-}
-
-.btn {
-  display: inline-block;
-  margin: 8px;
-  padding: 15px 34px;
-  background: #39ff14;
-  color: #000;
-  font-weight: 900;
-  border-radius: 10px;
-  text-decoration: none;
-  box-shadow: 0 0 18px #39ff14;
-  transition: .2s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-.middle {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.cargos {
-  margin-bottom: 16px;
-}
-
-.bottom {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.rr {
-  text-align: center;
-  color: #39ff14;
-  font-size: 22px;
-  font-weight: bold;
-  margin: 12px 0 20px;
-  text-shadow: 0 0 10px #39ff14;
-}
-
-.footer {
-  margin-top: 16px;
+  padding: 30px;
+  color: #8b98aa;
+  background: #0b1018;
 }
 
 @media (max-width: 900px) {
-  .top,
-  .middle,
-  .bottom {
+  .layout {
     grid-template-columns: 1fr;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    font-size: 40px;
   }
 }
 </style>
@@ -101,52 +183,103 @@ img {
 
 <body>
 
-<div class="container">
+<nav class="navbar">
+  <a href="#">🏠 INÍCIO</a>
+  <a href="#jogar">🎮 JOGAR</a>
+  <a href="#regras">📖 REGRAS</a>
+  <a href="#doadores">⭐ TOP DOADORES</a>
+  <a class="btn-loja" href="https://frotaland.centralcart.ai" target="_blank">LOJA</a>
+  <a href="https://frotaland.centralcart.ai" target="_blank">🛒 CARRINHO</a>
+</nav>
 
-  <div class="top">
-    <img src="banner.png" alt="FrotaLand SMP">
-    <img src="regras.png" alt="Regras FrotaLand">
+<section class="hero">
+  <div class="logo">FROTA LAND SMP</div>
+
+  <div class="hero-info">
+    <div class="hero-card">
+      🔥 CONECTE-SE JÁ!
+      <span>IP: jogar.frotaland.com.br</span>
+    </div>
+
+    <div class="hero-card">
+      💬 ENTRAR NO DISCORD
+      <span>Participe da comunidade</span>
+    </div>
   </div>
+</section>
 
-  <div class="buttons">
-    <a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">JOGAR AGORA</a>
-    <a class="btn" href="https://frotaland.centralcart.ai" target="_blank">LOJA OFICIAL</a>
-    <a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">DISCORD</a>
-  </div>
+<div class="layout">
 
-  <div class="middle">
-    <a href="https://frotaland.centralcart.ai" target="_blank">
-      <img src="loja.png" alt="Loja Oficial">
-    </a>
+  <aside>
+    <div class="card menu-card">
+      <div class="menu-item">🏠 INÍCIO</div>
+      <div class="menu-item">🌲 SURVIVAL</div>
+      <div class="menu-item">🛒 LOJA</div>
+      <div class="menu-item">⚔️ EVENTOS</div>
+    </div>
 
-    <img src="evento.png" alt="Evento">
+    <div class="card" id="jogar">
+      <h2>JUNTE-SE A NÓS</h2>
+      <p>Clique abaixo para jogar com a comunidade.</p>
+      <a class="play-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">JOGAR AGORA</a>
+    </div>
 
-    <img src="reinicio.png" alt="Reinício do Servidor">
-  </div>
+    <div class="card" id="doadores">
+      <h2>TOP DOADORES</h2>
+      <p>Veja quem mais contribuiu neste mês.</p>
 
-  <div class="rr">
-    Reinício automático do servidor a cada 6 horas
-  </div>
+      <div class="donator">
+        <span>🥇 Em breve</span>
+        <span class="green">R$ 0,00</span>
+      </div>
+    </div>
+  </aside>
 
-  <div class="cargos">
-    <img src="cargos.png" alt="Cargos FrotaLand">
-  </div>
+  <main>
+    <div class="card">
+      <div class="main-title">Seja bem-vindo(a) ao servidor FrotaLand!</div>
 
-  <div class="bottom">
-    <img src="comandos.png" alt="Comandos úteis">
+      <img class="banner-img" src="banner.png" alt="FrotaLand">
 
-    <a href="https://discord.gg/prvDEs4hkT" target="_blank">
-      <img src="discord.png" alt="Discord FrotaLand">
-    </a>
+      <p><span class="green">Como entrar no servidor?</span></p>
+      <p><strong>Java:</strong> adicione o IP <span class="green">jogar.frotaland.com.br</span></p>
+      <p><strong>Versão:</strong> 1.21.1 | <strong>Modpack:</strong> ATM10</p>
 
-    <img src="bemvindo.png" alt="Bem-vindo">
-  </div>
+      <br>
 
-  <div class="footer">
-    <img src="rodape.png" alt="Explore Construa Sobreviva">
-  </div>
+      <p><span class="green">O VIP e os itens são entregues de imediato?</span></p>
+      <p>Sim, o sistema realiza a entrega logo após a confirmação do pagamento.</p>
+
+      <p><span class="green">É seguro doar por aqui?</span></p>
+      <p>Utilizamos a CentralCart para entregar os benefícios com segurança.</p>
+
+      <div class="section-grid">
+        <a href="https://frotaland.centralcart.ai" target="_blank">
+          <img src="loja.png" alt="Loja">
+        </a>
+
+        <img src="evento.png" alt="Eventos">
+
+        <img src="reinicio.png" alt="Reinício">
+      </div>
+    </div>
+
+    <div class="card" id="regras">
+      <div class="main-title">Regras do servidor</div>
+      <img class="banner-img" src="regras.png" alt="Regras">
+    </div>
+
+    <div class="card">
+      <div class="main-title">Comunidade</div>
+      <img class="banner-img" src="discord.png" alt="Discord">
+    </div>
+  </main>
 
 </div>
+
+<footer>
+  FROTA LAND SMP © 2026 — Explore • Construa • Sobreviva
+</footer>
 
 </body>
 </html>
