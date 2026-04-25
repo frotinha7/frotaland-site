@@ -55,17 +55,18 @@ a { text-decoration: none; color: inherit; }
 .logo { display: none; }
 
 .hero-info {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+
   display: flex;
   justify-content: space-between;
-  gap: 80px;
   align-items: center;
-  flex-wrap: wrap;
-  margin-top: 0;
-
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%; 
+  gap: 80px;
+  padding: 0 80px;
+  flex-wrap: nowrap;
 }
 
 .hero-btn {
@@ -200,7 +201,12 @@ footer {
   }
 
   .hero-info {
+    position: static;
+    transform: none;
+    justify-content: center;
+    padding: 0;
     gap: 10px;
+    flex-wrap: wrap;
   }
 
   .hero-btn {
