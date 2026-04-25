@@ -45,12 +45,12 @@ a { text-decoration: none; color: inherit; }
     url("banner2.png");
   background-size: cover;
   background-position: center;
-  padding: 80px 20px;
+  padding: 45px 20px;
   text-align: center;
 }
 
 .logo {
-  font-size: 60px;
+  font-size: 45px;
   font-weight: 900;
   color: #38bdf8;
   text-shadow: 0 0 25px #0ea5e9;
@@ -59,8 +59,8 @@ a { text-decoration: none; color: inherit; }
 .hero-info {
   display: flex;
   justify-content: center;
-  gap: 80px;
-  margin-top: 30px;
+  gap: 60px;
+  margin-top: 20px;
   flex-wrap: wrap;
 }
 
@@ -72,7 +72,7 @@ a { text-decoration: none; color: inherit; }
 
 .layout {
   max-width: 1200px;
-  margin: -40px auto 40px;
+  margin: -30px auto 40px;
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 25px;
@@ -108,19 +108,16 @@ a { text-decoration: none; color: inherit; }
   margin-top: 20px;
 }
 
-.play-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #38bdf8;
-}
-
 .main-title {
-  font-size: 24px;
+  font-size: 22px;
   margin-bottom: 15px;
   font-weight: 900;
 }
 
 .banner-img {
   width: 100%;
+  max-height: 320px;
+  object-fit: contain;
   border-radius: 10px;
   margin-bottom: 18px;
 }
@@ -130,23 +127,17 @@ a { text-decoration: none; color: inherit; }
   font-weight: bold;
 }
 
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+.loja-destaque {
+  text-align: center;
   margin-top: 25px;
 }
 
-.section-grid img {
+.loja-destaque img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.section-grid img:hover {
-  transform: scale(1.05);
+  max-width: 700px;
+  border-radius: 12px;
+  margin: auto;
+  display: block;
 }
 
 .donator {
@@ -167,8 +158,6 @@ footer {
 
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
-  .section-grid { grid-template-columns: 1fr; }
-  .logo { font-size: 40px; }
 }
 </style>
 </head>
@@ -187,111 +176,102 @@ footer {
   <div class="logo">FROTALAND SMP</div>
 
   <div class="hero-info">
-    <div>🔥 CONECTE-SE JÁ!<span>IP:    jogar.frotaland.com.br</span></div>
-    <div>💬 DISCORD<span>  Entre na comunidade</span></div>
+    <div>🔥 CONECTE-SE JÁ!<span>IP: jogar.frotaland.com.br</span></div>
+    <div>💬 DISCORD<span>Entre na comunidade</span></div>
   </div>
 </section>
 
 <div class="layout">
 
   <aside>
-    <div class="card">
-      <div class="menu-item">🏠 INÍCIO</div>
-      <div class="menu-item">🌲 SURVIVAL</div>
-      <div class="menu-item">🛒 LOJA</div>
-      <div class="menu-item">⚔️ EVENTOS</div>
+
+    <!-- VIP PRIMEIRO -->
+    <div class="card" id="vip">
+      <div class="main-title">💎 Torne-se VIP</div>
+
+      <img class="banner-img" src="vip.png">
+
+      <p>Destaque-se dentro do <span class="blue">FrotaLand SMP</span> e tenha acesso a vantagens exclusivas!</p>
+
+      <p class="blue">🔥 Benefícios VIP:</p>
+
+      <ul style="line-height:1.8;">
+        <li>✨ Nick RGB</li>
+        <li>🐾 Pets exclusivos</li>
+        <li>🐎 Montarias</li>
+        <li>⚡ Perks únicos</li>
+        <li>💰 Bônus economia</li>
+        <li>🎁 Kits VIP</li>
+        <li>🚀 Prioridade</li>
+      </ul>
+
+      <a class="play-btn" href="https://frotaland.centralcart.ai" target="_blank">
+        COMPRAR VIP
+      </a>
     </div>
 
-    <div class="card" id="jogar">
-      <h2>JOGAR AGORA</h2>
-      <p>Clique abaixo para entrar na comunidade e jogar.</p>
-      <a class="play-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">ENTRAR</a>
-    </div>
-
+    <!-- TOP DOADORES -->
     <div class="card" id="doadores">
-      <h2>TOP DOADORES</h2>
-      <img class="banner-img" src="doadores2.png" alt="Top Doadores">
-      <p>Veja quem mais apoiou o servidor neste mês.</p>
+      <div class="main-title">🏆 TOP DOADORES</div>
+
+      <img class="banner-img" src="doadores2.png">
 
       <div class="donator"><span>🥇 Em breve</span><span class="blue">R$ 0,00</span></div>
       <div class="donator"><span>🥈 Em breve</span><span class="blue">R$ 0,00</span></div>
       <div class="donator"><span>🥉 Em breve</span><span class="blue">R$ 0,00</span></div>
     </div>
+
+    <!-- JOGAR -->
+    <div class="card" id="jogar">
+      <h2>JOGAR AGORA</h2>
+      <a class="play-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">ENTRAR</a>
+    </div>
+
   </aside>
 
   <main>
+
     <div class="card">
       <div class="main-title">Bem-vindo ao FrotaLand SMP!</div>
 
-      <img class="banner-img" src="banner2.png" alt="FrotaLand SMP">
+      <img class="banner-img" src="banner2.png">
 
       <p><span class="blue">Sobre o servidor:</span></p>
-      <p>Servidor Minecraft ATM10 focado em uma EXPERIENCIA DE RPG COM UM TOQUE DE ROLEPLAY, esse servidor é um PROJETO SOLO do STREAMER FROTINHA. que tem uma IDEIA fora da caixa pra trazer algo
-      incrivel pra todos vocês, se divirta, faça amigos, apoie o servidor, e o melhor sorria.</p>
+      <p>Servidor ATM10 focado em aventura, economia, eventos e comunidade.</p>
 
       <p><span class="blue">Como entrar:</span></p>
       <p>IP: <span class="blue">jogar.frotaland.com.br</span></p>
-      <p>Versão: 1.21.1 | Modpack: ATM10</p>
+      <p>Versão: 1.21.1 | ATM10</p>
 
-<div class="loja-destaque">
-  <a href="https://frotaland.centralcart.ai" target="_blank">
-    <img src="loja2.png" alt="Loja Oficial">
-  </a>
+      <div class="loja-destaque">
+        <a href="https://frotaland.centralcart.ai" target="_blank">
+          <img src="loja2.png">
+        </a>
 
-  <a class="play-btn" href="https://frotaland.centralcart.ai" target="_blank">
-    ACESSAR LOJA OFICIAL
-  </a>
-</div>
+        <a class="play-btn" href="https://frotaland.centralcart.ai" target="_blank">
+          ACESSAR LOJA
+        </a>
+      </div>
+
+    </div>
 
     <div class="card" id="regras">
       <div class="main-title">Regras</div>
-      <img class="banner-img" src="regras2.png" alt="Regras">
+      <img class="banner-img" src="regras2.png">
     </div>
 
     <div class="card">
       <div class="main-title">Discord</div>
-      <img class="banner-img" src="discord2.png" alt="Discord">
+      <img class="banner-img" src="discord2.png">
     </div>
+
   </main>
-<div class="card" id="vip">
-  <div class="main-title">💎 Torne-se VIP</div>
 
-  <img class="banner-img" src="vip.png">
-
-  <p>
-    Destaque-se dentro do <span class="blue">FrotaLand SMP</span> e tenha acesso a vantagens exclusivas!
-  </p>
-
-  <br>
-
-  <p class="blue">🔥 Benefícios VIP:</p>
-
-  <ul style="line-height: 1.8;">
-    <li>✨ Nick colorido com RGB</li>
-    <li>🐾 Pets e cosméticos exclusivos</li>
-    <li>🐎 Montarias especiais</li>
-    <li>⚡ Acesso a perks únicos no servidor</li>
-    <li>💰 Bônus de economia e recompensas</li>
-    <li>🎁 Itens especiais e kits VIP</li>
-    <li>🚀 Prioridade em eventos e filas</li>
-  </ul>
-
-  <br>
-
-  <p class="blue">💳 Como adquirir?</p>
-  <p>
-    Acesse nossa loja oficial e garanta seu VIP agora mesmo!
-  </p>
-
-  <a class="play-btn" href="https://frotaland.centralcart.ai" target="_blank">
-    COMPRAR VIP AGORA
-  </a>
-</div>
 </div>
 
 <footer>
-  FROTALAND SMP © 2026
+FROTALAND SMP © 2026
 </footer>
-©Frotaland não é um serviço oficial, afiliado ou associado a Mojang ou Microsoft.
+
 </body>
 </html>
