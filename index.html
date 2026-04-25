@@ -8,7 +8,7 @@
 <style>
 body {
   margin: 0;
-  background: #020402;
+  background: #030703;
   font-family: Arial, sans-serif;
   color: white;
 }
@@ -16,29 +16,67 @@ body {
 .container {
   max-width: 1400px;
   margin: auto;
-  padding: 20px;
+  padding: 18px;
 }
 
-.banner {
+img {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 25px #39ff14;
+  display: block;
+  border-radius: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cards3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cargos {
+  margin-bottom: 16px;
+}
+
+.cardsBottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .buttons {
   text-align: center;
-  margin: 25px 0;
+  margin: 22px 0;
 }
 
 .btn {
   display: inline-block;
-  margin: 10px;
-  padding: 16px 34px;
+  margin: 8px;
+  padding: 15px 30px;
   background: #39ff14;
   color: #000;
   font-weight: bold;
   border-radius: 10px;
   text-decoration: none;
+  box-shadow: 0 0 15px #39ff14;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .grid,
+  .cards3,
+  .cardsBottom {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
@@ -46,12 +84,44 @@ body {
 <body>
 
 <div class="container">
-  <img class="banner" src="banner.png" alt="FrotaLand SMP">
+
+  <div class="grid">
+    <img src="banner.png" alt="FrotaLand SMP">
+    <img src="regras.png" alt="Regras FrotaLand">
+  </div>
 
   <div class="buttons">
     <a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">JOGAR AGORA</a>
+    <a class="btn" href="https://frotaland.centralcart.ai" target="_blank">LOJA OFICIAL</a>
     <a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">DISCORD</a>
   </div>
+
+  <div class="cards3">
+    <a href="https://frotaland.centralcart.ai" target="_blank">
+      <img src="loja.png" alt="Loja Oficial">
+    </a>
+
+    <img src="evento.png" alt="Evento">
+
+    <img src="reinicio.png" alt="Reinício do Servidor">
+  </div>
+
+  <div class="cargos">
+    <img src="cargos.png" alt="Cargos FrotaLand">
+  </div>
+
+  <div class="cardsBottom">
+    <img src="comandos.png" alt="Comandos Úteis">
+
+    <a href="https://discord.gg/prvDEs4hkT" target="_blank">
+      <img src="discord.png" alt="Discord FrotaLand">
+    </a>
+
+    <img src="bemvindo.png" alt="Seja Bem-vindo">
+  </div>
+
+  <img src="rodape.png" alt="Explore Construa Sobreviva">
+
 </div>
 
 </body>
