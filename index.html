@@ -6,15 +6,19 @@
 <title>FrotaLand SMP</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background: #030703;
+  background: #020502;
   font-family: Arial, sans-serif;
   color: white;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1450px;
   margin: auto;
   padding: 18px;
 }
@@ -25,27 +29,9 @@ img {
   border-radius: 8px;
 }
 
-.grid {
+.top {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.cards3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.cargos {
-  margin-bottom: 16px;
-}
-
-.cardsBottom {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 2.2fr 1fr;
   gap: 16px;
   margin-bottom: 16px;
 }
@@ -58,23 +44,55 @@ img {
 .btn {
   display: inline-block;
   margin: 8px;
-  padding: 15px 30px;
+  padding: 15px 34px;
   background: #39ff14;
   color: #000;
-  font-weight: bold;
+  font-weight: 900;
   border-radius: 10px;
   text-decoration: none;
-  box-shadow: 0 0 15px #39ff14;
+  box-shadow: 0 0 18px #39ff14;
+  transition: .2s;
 }
 
 .btn:hover {
   transform: scale(1.05);
 }
 
+.middle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cargos {
+  margin-bottom: 16px;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.rr {
+  text-align: center;
+  color: #39ff14;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 12px 0 20px;
+  text-shadow: 0 0 10px #39ff14;
+}
+
+.footer {
+  margin-top: 16px;
+}
+
 @media (max-width: 900px) {
-  .grid,
-  .cards3,
-  .cardsBottom {
+  .top,
+  .middle,
+  .bottom {
     grid-template-columns: 1fr;
   }
 }
@@ -85,9 +103,9 @@ img {
 
 <div class="container">
 
-  <div class="grid">
-    <img src="banner.png" alt="FrotaLand SMP">
-    <img src="regras.png" alt="Regras FrotaLand">
+  <div class="top">
+    <img src="banner(1).png" alt="FrotaLand SMP">
+    <img src="regras(1).png" alt="Regras FrotaLand">
   </div>
 
   <div class="buttons">
@@ -96,31 +114,37 @@ img {
     <a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">DISCORD</a>
   </div>
 
-  <div class="cards3">
+  <div class="middle">
     <a href="https://frotaland.centralcart.ai" target="_blank">
-      <img src="loja.png" alt="Loja Oficial">
+      <img src="loja(1).png" alt="Loja Oficial">
     </a>
 
-    <img src="evento.png" alt="Evento">
+    <img src="evento(1).png" alt="Evento">
 
-    <img src="reinicio.png" alt="Reinício do Servidor">
+    <img src="reinicio(1).png" alt="Reinício do Servidor">
+  </div>
+
+  <div class="rr">
+    Reinício automático do servidor a cada 6 horas
   </div>
 
   <div class="cargos">
-    <img src="cargos.png" alt="Cargos FrotaLand">
+    <img src="cargos(1).png" alt="Cargos FrotaLand">
   </div>
 
-  <div class="cardsBottom">
-    <img src="comandos.png" alt="Comandos Úteis">
+  <div class="bottom">
+    <img src="comandos(1).png" alt="Comandos úteis">
 
     <a href="https://discord.gg/prvDEs4hkT" target="_blank">
-      <img src="discord.png" alt="Discord FrotaLand">
+      <img src="discord(1).png" alt="Discord FrotaLand">
     </a>
 
-    <img src="bemvindo.png" alt="Seja Bem-vindo">
+    <img src="bemvindo(1).png" alt="Bem-vindo">
   </div>
 
-  <img src="rodape.png" alt="Explore Construa Sobreviva">
+  <div class="footer">
+    <img src="rodape(1).png" alt="Explore Construa Sobreviva">
+  </div>
 
 </div>
 
