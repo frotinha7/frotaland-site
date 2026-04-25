@@ -8,84 +8,51 @@
 <style>
 body {
   margin: 0;
-  background: #050805;
+  background: #020402;
   font-family: Arial, sans-serif;
   color: white;
 }
 
-.hero {
-  min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.9)), url("banner.png");
-  background-size: cover;
-  background-position: center top;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
 }
 
-.box {
-  background: rgba(0,0,0,.72);
-  border: 2px solid #39ff14;
-  border-radius: 18px;
-  padding: 35px;
-  max-width: 850px;
+.banner {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #39ff14;
+}
+
+.buttons {
   text-align: center;
-  box-shadow: 0 0 35px #39ff14;
-}
-
-h1 {
-  font-size: 64px;
-  margin: 0;
-  color: #39ff14;
-  text-shadow: 0 0 20px #39ff14;
-}
-
-p {
-  font-size: 22px;
+  margin: 25px 0;
 }
 
 .btn {
   display: inline-block;
   margin: 10px;
-  padding: 16px 32px;
+  padding: 16px 34px;
   background: #39ff14;
   color: #000;
+  font-weight: bold;
   border-radius: 10px;
   text-decoration: none;
-  font-weight: bold;
-}
-
-.btn:hover {
-  box-shadow: 0 0 20px #39ff14;
-  transform: scale(1.05);
-}
-
-.info {
-  margin-top: 20px;
-  font-size: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <div class="box">
-    <h1>FROTA LAND SMP</h1>
-    <p>Sua aventura, suas regras, seu mundo!</p>
+<div class="container">
+  <img class="banner" src="banner.png" alt="FrotaLand SMP">
 
-    <div class="info">
-      <strong>IP:</strong> jogar.frotaland.com.br<br>
-      <strong>Versão:</strong> 1.21.1 | <strong>Modpack:</strong> ATM10
-    </div>
-
-    <br>
-
+  <div class="buttons">
     <a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">JOGAR AGORA</a>
     <a class="btn" href="https://discord.gg/prvDEs4hkT" target="_blank">DISCORD</a>
   </div>
-</section>
+</div>
 
 </body>
 </html>
