@@ -6,27 +6,17 @@
 <title>FrotaLand SMP</title>
 
 <style>
-.cards img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-</style>
-}
-<style>
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
   background: linear-gradient(180deg, #0b1220, #0f1b2e);
-  color: white; 
+  color: white;
   font-family: Arial, sans-serif;
 }
 
 a { text-decoration: none; color: inherit; }
 
-/* NAVBAR */
 .navbar {
   height: 75px;
   background: #0d1626;
@@ -49,7 +39,6 @@ a { text-decoration: none; color: inherit; }
   border-radius: 30px;
 }
 
-/* HERO */
 .hero {
   background:
     linear-gradient(rgba(11,18,32,.85), rgba(11,18,32,.95)),
@@ -75,13 +64,12 @@ a { text-decoration: none; color: inherit; }
   flex-wrap: wrap;
 }
 
-.hero-card span {
+.hero-info span {
   display: block;
   color: #94a3b8;
   font-size: 14px;
 }
 
-/* LAYOUT */
 .layout {
   max-width: 1200px;
   margin: -40px auto 40px;
@@ -99,7 +87,6 @@ a { text-decoration: none; color: inherit; }
   box-shadow: 0 15px 40px rgba(0,0,0,.4);
 }
 
-/* MENU */
 .menu-item {
   padding: 18px;
   border-bottom: 1px solid #1f2937;
@@ -111,7 +98,6 @@ a { text-decoration: none; color: inherit; }
   color: #38bdf8;
 }
 
-/* BOTÃO */
 .play-btn {
   display: block;
   background: linear-gradient(90deg,#0ea5e9,#38bdf8);
@@ -127,9 +113,8 @@ a { text-decoration: none; color: inherit; }
   box-shadow: 0 0 20px #38bdf8;
 }
 
-/* TEXTO */
 .main-title {
-  font-size: 22px;
+  font-size: 24px;
   margin-bottom: 15px;
   font-weight: 900;
 }
@@ -145,7 +130,6 @@ a { text-decoration: none; color: inherit; }
   font-weight: bold;
 }
 
-/* GRID */
 .section-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -155,6 +139,8 @@ a { text-decoration: none; color: inherit; }
 
 .section-grid img {
   width: 100%;
+  height: 150px;
+  object-fit: cover;
   border-radius: 10px;
   transition: 0.3s;
 }
@@ -163,7 +149,15 @@ a { text-decoration: none; color: inherit; }
   transform: scale(1.05);
 }
 
-/* FOOTER */
+.donator {
+  display: flex;
+  justify-content: space-between;
+  background: #0b1220;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
 footer {
   text-align: center;
   padding: 30px;
@@ -171,19 +165,10 @@ footer {
   background: #020617;
 }
 
-/* RESPONSIVO */
 @media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .section-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .logo {
-    font-size: 40px;
-  }
+  .layout { grid-template-columns: 1fr; }
+  .section-grid { grid-template-columns: 1fr; }
+  .logo { font-size: 40px; }
 }
 </style>
 </head>
@@ -202,15 +187,8 @@ footer {
   <div class="logo">FROTALAND SMP</div>
 
   <div class="hero-info">
-    <div>
-      🔥 CONECTE-SE JÁ!
-      <span>IP: jogar.frotaland.com.br</span>
-    </div>
-
-    <div>
-      💬 DISCORD
-      <span>Entre na comunidade</span>
-    </div>
+    <div>🔥 CONECTE-SE JÁ!<span>IP: jogar.frotaland.com.br</span></div>
+    <div>💬 DISCORD<span>Entre na comunidade</span></div>
   </div>
 </section>
 
@@ -226,38 +204,49 @@ footer {
 
     <div class="card" id="jogar">
       <h2>JOGAR AGORA</h2>
+      <p>Clique abaixo para entrar na comunidade e jogar.</p>
       <a class="play-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">ENTRAR</a>
+    </div>
+
+    <div class="card" id="doadores">
+      <h2>TOP DOADORES</h2>
+      <img class="banner-img" src="doadores2.png" alt="Top Doadores">
+      <p>Veja quem mais apoiou o servidor neste mês.</p>
+
+      <div class="donator"><span>🥇 Em breve</span><span class="blue">R$ 0,00</span></div>
+      <div class="donator"><span>🥈 Em breve</span><span class="blue">R$ 0,00</span></div>
+      <div class="donator"><span>🥉 Em breve</span><span class="blue">R$ 0,00</span></div>
     </div>
   </aside>
 
   <main>
     <div class="card">
-      <div class="main-title">Bem-vindo ao FrotaLand</div>
+      <div class="main-title">Bem-vindo ao FrotaLand SMP!</div>
 
-      <img class="banner-img" src="banner2.png">
+      <img class="banner-img" src="banner2.png" alt="FrotaLand SMP">
+
+      <p><span class="blue">Sobre o servidor:</span></p>
+      <p>Servidor Minecraft ATM10 focado em aventura, economia, exploração, eventos e comunidade.</p>
 
       <p><span class="blue">Como entrar:</span></p>
       <p>IP: <span class="blue">jogar.frotaland.com.br</span></p>
-      <p>Versão: 1.21.1 | ATM10</p>
+      <p>Versão: 1.21.1 | Modpack: ATM10</p>
 
       <div class="section-grid">
-        <a href="https://frotaland.centralcart.ai" target="_blank">
-          <img src="loja2.png">
-        </a>
-
-        <img src="evento2.png">
-        <img src="reinicio2.png">
+        <a href="https://frotaland.centralcart.ai" target="_blank"><img src="loja2.png" alt="Loja"></a>
+        <img src="evento2.png" alt="Evento">
+        <img src="reinicio2.png" alt="Reinício">
       </div>
     </div>
 
     <div class="card" id="regras">
       <div class="main-title">Regras</div>
-      <img class="banner-img" src="regras2.png">
+      <img class="banner-img" src="regras2.png" alt="Regras">
     </div>
 
     <div class="card">
       <div class="main-title">Discord</div>
-      <img class="banner-img" src="discord2.png">
+      <img class="banner-img" src="discord2.png" alt="Discord">
     </div>
   </main>
 
