@@ -10,76 +10,72 @@
 
 body {
   margin: 0;
-  background: #10151f;
+  background: linear-gradient(180deg, #0b1220, #0f1b2e);
   color: white;
-  font-family: Arial, sans-serif;a
+  font-family: Arial, sans-serif;
 }
 
 a { text-decoration: none; color: inherit; }
 
+/* NAVBAR */
 .navbar {
   height: 75px;
-  background: #111722;
+  background: #0d1626;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 35px;
   font-weight: 900;
-  border-bottom: 1px solid #222b38;
+  border-bottom: 1px solid #1e293b;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-.navbar a:hover { color: #4fd35a; }
+.navbar a:hover { color: #38bdf8; }
 
 .btn-loja {
-  background: #4fd35a;
-  color: white;
-  padding: 14px 28px;
+  background: linear-gradient(90deg,#0ea5e9,#38bdf8);
+  padding: 12px 25px;
   border-radius: 30px;
 }
 
+/* HERO */
 .hero {
   background:
-    linear-gradient(rgba(16,21,31,.75), rgba(16,21,31,.95)),
+    linear-gradient(rgba(11,18,32,.85), rgba(11,18,32,.95)),
     url("banner2.png");
   background-size: cover;
   background-position: center;
-  padding: 70px 20px 40px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .logo {
-  font-size: 58px;
+  font-size: 60px;
   font-weight: 900;
-  color: #54ff4f;
-  text-shadow: 0 0 20px #2bff00;
+  color: #38bdf8;
+  text-shadow: 0 0 25px #0ea5e9;
 }
 
 .hero-info {
   display: flex;
   justify-content: center;
   gap: 80px;
-  margin-top: 25px;
+  margin-top: 30px;
   flex-wrap: wrap;
-}
-
-.hero-card {
-  font-size: 18px;
-  font-weight: bold;
 }
 
 .hero-card span {
   display: block;
-  color: #9ca8b8;
+  color: #94a3b8;
   font-size: 14px;
-  margin-top: 5px;
 }
 
+/* LAYOUT */
 .layout {
   max-width: 1200px;
-  margin: -25px auto 40px;
+  margin: -40px auto 40px;
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 25px;
@@ -87,39 +83,42 @@ a { text-decoration: none; color: inherit; }
 }
 
 .card {
-  background: #1a202c;
-  border-radius: 10px;
+  background: #111827;
+  border-radius: 12px;
   padding: 22px;
   margin-bottom: 22px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+  box-shadow: 0 15px 40px rgba(0,0,0,.4);
 }
 
-.menu-card {
-  padding: 0;
-  overflow: hidden;
-}
-
+/* MENU */
 .menu-item {
-  padding: 22px;
-  border-bottom: 1px solid #2a3240;
+  padding: 18px;
+  border-bottom: 1px solid #1f2937;
   font-weight: 900;
 }
 
 .menu-item:hover {
-  background: #232b38;
-  color: #4fd35a;
+  background: #1e293b;
+  color: #38bdf8;
 }
 
+/* BOTÃO */
 .play-btn {
   display: block;
-  background: #4fd35a;
-  padding: 17px;
-  border-radius: 6px;
+  background: linear-gradient(90deg,#0ea5e9,#38bdf8);
+  padding: 15px;
+  border-radius: 8px;
   text-align: center;
   font-weight: 900;
   margin-top: 20px;
 }
 
+.play-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #38bdf8;
+}
+
+/* TEXTO */
 .main-title {
   font-size: 22px;
   margin-bottom: 15px;
@@ -128,15 +127,16 @@ a { text-decoration: none; color: inherit; }
 
 .banner-img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 18px;
 }
 
-.green {
-  color: #39ff14;
-  font-weight: 900;
+.blue {
+  color: #38bdf8;
+  font-weight: bold;
 }
 
+/* GRID */
 .section-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -146,25 +146,23 @@ a { text-decoration: none; color: inherit; }
 
 .section-grid img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
-.donator {
-  display: flex;
-  justify-content: space-between;
-  background: #111722;
-  padding: 12px;
-  border-radius: 6px;
-  margin-top: 10px;
+.section-grid img:hover {
+  transform: scale(1.05);
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
-  color: #8b98aa;
-  background: #0b1018;
+  color: #94a3b8;
+  background: #020617;
 }
 
+/* RESPONSIVO */
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
@@ -187,23 +185,22 @@ footer {
   <a href="#">🏠 INÍCIO</a>
   <a href="#jogar">🎮 JOGAR</a>
   <a href="#regras">📖 REGRAS</a>
-  <a href="#doadores">⭐ TOP DOADORES</a>
+  <a href="#doadores">⭐ DOADORES</a>
   <a class="btn-loja" href="https://frotaland.centralcart.ai" target="_blank">LOJA</a>
-  <a href="https://frotaland.centralcart.ai" target="_blank">🛒 CARRINHO</a>
 </nav>
 
 <section class="hero">
   <div class="logo">FROTALAND SMP</div>
 
   <div class="hero-info">
-    <div class="hero-card">
-      🔥CONECTE-SE JÁ!
+    <div>
+      🔥 CONECTE-SE JÁ!
       <span>IP: jogar.frotaland.com.br</span>
     </div>
 
-    <div class="hero-card">
-      💬 ENTRAR NO DISCORD
-      <span>Participe da comunidade</span>
+    <div>
+      💬 DISCORD
+      <span>Entre na comunidade</span>
     </div>
   </div>
 </section>
@@ -211,7 +208,7 @@ footer {
 <div class="layout">
 
   <aside>
-    <div class="card menu-card">
+    <div class="card">
       <div class="menu-item">🏠 INÍCIO</div>
       <div class="menu-item">🌲 SURVIVAL</div>
       <div class="menu-item">🛒 LOJA</div>
@@ -219,66 +216,46 @@ footer {
     </div>
 
     <div class="card" id="jogar">
-      <h2>JUNTE-SE A NÓS</h2>
-      <p>Clique abaixo para jogar com a comunidade.</p>
-      <a class="play-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">JOGAR AGORA</a>
-    </div>
-
-    <div class="card" id="doadores">
-      <h2>TOP DOADORES</h2>
-      <p>Veja quem mais contribuiu neste mês.</p>
-
-      <div class="donator">
-        <span>🥇 Em breve</span>
-        <span class="green">R$ 0,00</span>
-      </div>
+      <h2>JOGAR AGORA</h2>
+      <a class="play-btn" href="https://discord.gg/prvDEs4hkT" target="_blank">ENTRAR</a>
     </div>
   </aside>
 
   <main>
     <div class="card">
-      <div class="main-title">Seja bem-vindo(a) ao servidor FrotaLand!</div>
+      <div class="main-title">Bem-vindo ao FrotaLand</div>
 
-      <img class="banner-img" src="banner2.png" alt="FrotaLand">
+      <img class="banner-img" src="banner2.png">
 
-      <p><span class="green">Como entrar no servidor?</span></p>
-      <p><strong>Java:</strong> adicione o IP <span class="green">jogar.frotaland.com.br</span></p>
-      <p><strong>Versão:</strong> 1.21.1 | <strong>Modpack:</strong> ATM10</p>
-
-      <br>
-
-      <p><span class="green">O VIP e os itens são entregues de imediato?</span></p>
-      <p>Sim, o sistema realiza a entrega logo após a confirmação do pagamento.</p>
-
-      <p><span class="green">É seguro doar por aqui?</span></p>
-      <p>Utilizamos a CentralCart para entregar os benefícios com segurança.</p>
+      <p><span class="blue">Como entrar:</span></p>
+      <p>IP: <span class="blue">jogar.frotaland.com.br</span></p>
+      <p>Versão: 1.21.1 | ATM10</p>
 
       <div class="section-grid">
         <a href="https://frotaland.centralcart.ai" target="_blank">
-          <img src="loja.png" alt="Loja">
+          <img src="loja2.png">
         </a>
 
-        <img src="evento.png" alt="Eventos">
-
-        <img src="reinicio.png" alt="Reinício">
+        <img src="evento2.png">
+        <img src="reinicio2.png">
       </div>
     </div>
 
     <div class="card" id="regras">
-      <div class="main-title">Regras do servidor</div>
-      <img class="banner-img" src="regras2.png" alt="Regras">
+      <div class="main-title">Regras</div>
+      <img class="banner-img" src="regras2.png">
     </div>
 
     <div class="card">
-      <div class="main-title">Comunidade</div>
-      <img class="banner-img" src="discord.png" alt="Discord">
+      <div class="main-title">Discord</div>
+      <img class="banner-img" src="discord2.png">
     </div>
   </main>
 
 </div>
 
 <footer>
-  FROTALAND SMP © 2026 — Explore • Construa • Sobreviva
+  FROTALAND SMP © 2026
 </footer>
 
 </body>
